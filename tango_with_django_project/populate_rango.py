@@ -5,41 +5,40 @@ import django
 django.setup()
 from rango.models import Category, Page
 
-
 def populate():
     python_pages = [
         {'title': 'Official Python Tutorial',
          'url':'http://docs.python.org/3/tutorial/',
-         'views': 170,},
+         'views': 110,},
         {'title':'How to Think like a Computer Scientist',
          'url':'http://www.greenteapress.com/thinkpython/',
-         'views': 119,},
+         'views': 75},
         {'title':'Learn Python in 10 Minutes',
          'url':'http://www.korokithakis.net/tutorials/python/',
-         'views': 76,}, ]
+         'views': 30} ]
     
     django_pages = [
         {'title':'Official Django Tutorial',
          'url':'https://docs.djangoproject.com/en/2.1/intro/tutorial01/',
-         'views': 140,},
+         'views': 58},
         {'title':'Django Rocks',
          'url':'http://www.djangorocks.com/',
-         'views': 97,},
+         'views': 19},
         {'title':'How to Tango with Django',
          'url':'http://www.tangowithdjango.com/',
-         'views': 56,}, ]
+         'views': 180} ]
     
     other_pages = [
         {'title':'Bottle',
          'url':'http://bottlepy.org/docs/dev/',
-         'views': 118,},
+         'views': 89},
         {'title':'Flask',
          'url':'http://flask.pocoo.org',
-         'views': 57,}, ]
+         'views': 49} ]
     
-    cats = {'Python': {'pages': python_pages, 'views': 128, 'likes': 64},
-            'Django': {'pages': django_pages, 'views': 64, 'likes': 32},
-            'Other Frameworks': {'pages': other_pages, 'views': 32, 'likes': 16} }
+    cats = {'Python': {'pages': python_pages, 'views': 180, 'likes': 90},
+            'Django': {'pages': django_pages, 'views': 45, 'likes': 27},
+            'Other Frameworks': {'pages': other_pages, 'views': 30, 'likes': 15} }
     
     for cat, cat_data in cats.items():
         c = add_cat(cat, views=cat_data['views'], likes=cat_data['likes'])
@@ -63,7 +62,6 @@ def add_cat(name, views=0, likes=0):
     c.likes = likes
     c.save()
     return c
-
 
 if __name__ == '__main__':
     print('Starting Rango population script...')
