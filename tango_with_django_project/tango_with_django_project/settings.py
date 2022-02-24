@@ -28,7 +28,7 @@ SECRET_KEY = 'sq_z*m=yr)aiu$9lyzf@)&-!o(yjs=)9igwhuco$d7@a3jed=@'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+LOGIN_URL = 'rango:login'
 
 # Application definition
 
@@ -126,3 +126,6 @@ STATICFILES_DIRS = [STATIC_DIR, ]
 
 MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
+
+
+
